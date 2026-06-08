@@ -88,7 +88,7 @@ export default function Home() {
           {/* Right Side: Daylight Solar Array Generation View */}
           <div className="relative w-full md:w-1/2 h-[50vh] md:h-full overflow-hidden">
             <img
-              src="/images/hero_daylight.png"
+              src="/images/hero_daylight.jpg"
               alt="Smart Solar & Security Solutions daylight generation display"
               className="object-cover w-full h-full opacity-90"
             />
