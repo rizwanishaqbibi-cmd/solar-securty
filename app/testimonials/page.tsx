@@ -1,3 +1,5 @@
+import ScrollReveal from "../../components/ScrollReveal";
+
 export default function Testimonials() {
   const reviews = [
     {
@@ -40,7 +42,7 @@ export default function Testimonials() {
       image: "/images/inverter_1.jpg"
     },
     {
-      title: "Commercial Security Surveillance",
+      title: "Commercial Security",
       category: "CCTV Installation",
       details: "High-definition IP camera installation at a commercial warehouse in I-9, connected to backup batteries.",
       image: "/images/cctv_2.jpg"
@@ -54,123 +56,116 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-slate-50 dark:bg-slate-950 min-h-screen font-sans">
-      
+    <div className="flex flex-col w-full">
+
       {/* Page Header */}
-      <section className="relative py-20 text-center overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section className="relative py-28 text-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/field_2.jpg"
-            alt="Smart Solar Testimonials Header Background"
-            className="object-cover w-full h-full opacity-30"
+            alt="Smart Solar Testimonials Header"
+            className="object-cover w-full h-full opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue to-brand-blue-dark opacity-90 mix-blend-multiply z-10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue-dark to-brand-blue-deep opacity-92 z-10" />
         </div>
 
-        <div className="relative z-20 max-w-4xl mx-auto px-4 space-y-4">
+        <div className="relative z-20 max-w-3xl mx-auto px-4 space-y-5">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-brand-amber font-semibold text-xs tracking-widest uppercase border border-white/10">
+            Client Feedback
+          </span>
           <h1 className="font-serif font-extrabold text-4xl sm:text-5xl tracking-tight text-white leading-tight">
             Testimonials & Gallery
           </h1>
-          <p className="font-serif italic text-lg sm:text-xl text-slate-200">
-            Reviews from Our Valued Clients
-          </p>
-          <div className="w-12 h-1 bg-brand-amber mx-auto rounded" />
-          <p className="max-w-xl mx-auto text-sm sm:text-base text-slate-200 font-light leading-relaxed">
-            See what property owners and business managers across Islamabad say about our custom solar arrays and security solutions.
+          <div className="section-divider mx-auto" />
+          <p className="max-w-lg mx-auto text-sm sm:text-base text-slate-200 font-light leading-relaxed">
+            What property owners and business managers say about our solar arrays and security solutions.
           </p>
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center space-y-4">
+      {/* Reviews */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <ScrollReveal className="text-center space-y-4">
           <h2 className="font-serif font-bold text-3xl text-slate-900 dark:text-white">Customer Reviews</h2>
-          <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto text-xs sm:text-sm">
-            Read comments from homeowners and businesses who transitioned to reliable solar backup and CCTV surveillance.
+          <div className="section-divider mx-auto" />
+          <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto text-sm">
+            Homeowners and businesses who transitioned to reliable solar backup and CCTV surveillance.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reviews.map((item, index) => (
-            <div
-              key={index}
-              className="glass-panel rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between border relative group hover:scale-[1.01]"
-            >
-              {/* Quote Mark Decoration */}
-              <div className="absolute top-6 right-8 text-6xl text-slate-200 dark:text-slate-800 font-serif leading-none select-none pointer-events-none">
-                &ldquo;
-              </div>
-
-              <div className="space-y-6 z-10">
-                {/* Rating Stars */}
-                <div className="flex gap-1">
-                  {[...Array(item.rating)].map((_, sIndex) => (
-                    <svg key={sIndex} className="w-5 h-5 text-brand-amber fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+            <ScrollReveal key={index} delay={index * 120}>
+              <div className="glass-panel rounded-2xl p-8 card-lift h-full flex flex-col justify-between relative">
+                {/* Quote decoration */}
+                <div className="absolute top-6 right-8 text-6xl text-slate-200 dark:text-slate-800 font-serif leading-none select-none pointer-events-none">
+                  &ldquo;
                 </div>
 
-                <p className="text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-light italic">
-                  &ldquo;{item.text}&rdquo;
-                </p>
-              </div>
+                <div className="space-y-5 z-10">
+                  {/* Stars */}
+                  <div className="flex gap-1">
+                    {[...Array(item.rating)].map((_, sIndex) => (
+                      <svg key={sIndex} className="w-5 h-5 text-brand-amber fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
 
-              <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center gap-4 mt-6">
-                <div className="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-sm">
-                  {item.avatarInitials}
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                    &ldquo;{item.text}&rdquo;
+                  </p>
                 </div>
-                <div>
-                  <h4 className="font-bold text-sm text-slate-900 dark:text-white">{item.author}</h4>
-                  <p className="text-xs text-slate-500">{item.location}</p>
-                  <span className="inline-block mt-1 text-[10px] font-semibold text-brand-blue dark:text-brand-blue-light uppercase tracking-wider">
-                    {item.product}
-                  </span>
+
+                <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center gap-4 mt-6">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white flex items-center justify-center font-bold text-sm shadow-md">
+                    {item.avatarInitials}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white">{item.author}</h4>
+                    <p className="text-xs text-slate-500">{item.location}</p>
+                    <span className="inline-block mt-1 text-[10px] font-semibold text-brand-blue dark:text-blue-400 uppercase tracking-wider">
+                      {item.product}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-4">
+      {/* Gallery */}
+      <section className="py-24 bg-surface dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <ScrollReveal className="text-center space-y-4">
             <h2 className="font-serif font-bold text-3xl text-slate-900 dark:text-white">Project Showcases</h2>
-            <p className="text-slate-550 dark:text-slate-400 max-w-md mx-auto text-xs sm:text-sm">
-              Photographs and details of clean structural arrays and active security hubs in B-17, F-8, and I-9 Islamabad sectors.
+            <div className="section-divider mx-auto" />
+            <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto text-sm">
+              Structural arrays and active security hubs in B-17, F-8, and I-9 Islamabad sectors.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {galleryItems.map((item, index) => (
-              <div
-                key={index}
-                className="glass-panel rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between border hover:scale-[1.01]"
-              >
-                <div>
-                  <div className="relative h-64 w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
-                    />
+              <ScrollReveal key={index} delay={index * 100}>
+                <div className="glass-panel rounded-2xl overflow-hidden card-lift h-full">
+                  <div className="relative h-64 w-full img-zoom">
+                    <img src={item.image} alt={item.title} className="object-cover w-full h-full" />
                   </div>
-                  <div className="p-6 space-y-3">
-                    <span className="inline-block px-2.5 py-1 rounded bg-brand-blue/15 text-brand-blue dark:text-brand-blue-light text-xs font-bold uppercase tracking-wider">
+                  <div className="p-7 space-y-3">
+                    <span className="inline-block px-3 py-1 rounded-lg bg-brand-blue/8 text-brand-blue dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider">
                       {item.category}
                     </span>
                     <h3 className="font-serif font-bold text-xl text-slate-900 dark:text-white">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-605 dark:text-slate-400 leading-relaxed font-light">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                       {item.details}
                     </p>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

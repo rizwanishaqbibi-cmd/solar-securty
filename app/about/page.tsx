@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ScrollReveal from "../../components/ScrollReveal";
 
 export default function About() {
   const milestones = [
@@ -25,165 +26,165 @@ export default function About() {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-slate-50 dark:bg-slate-950 min-h-screen font-sans">
-      
+    <div className="flex flex-col w-full">
+
       {/* Page Header */}
-      <section className="relative py-24 text-center overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section className="relative py-28 text-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/about_header_bg.jpg"
             alt="Smart Solar About Header Background"
             fill
             priority
-            className="object-cover opacity-30"
+            className="object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue to-brand-blue-dark opacity-90 mix-blend-multiply z-10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue-dark to-brand-blue-deep opacity-92 z-10" />
         </div>
-        
-        <div className="relative z-20 max-w-4xl mx-auto px-4 space-y-4">
+
+        <div className="relative z-20 max-w-3xl mx-auto px-4 space-y-5">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-brand-amber font-semibold text-xs tracking-widest uppercase border border-white/10">
+            Our Story
+          </span>
           <h1 className="font-serif font-extrabold text-4xl sm:text-5xl tracking-tight text-white leading-tight">
             About Us
           </h1>
-          <p className="font-serif italic text-lg sm:text-xl text-slate-200">
-            SMART SOLAR & SECURITY SOLUTIONS
-          </p>
-          <div className="w-12 h-1 bg-brand-amber mx-auto rounded" />
-          <p className="max-w-xl mx-auto text-sm sm:text-base text-slate-200 font-light leading-relaxed">
-            Serving the Islamabad metro area since 2010. Providing robust, engineering-focused solar systems and surveillance platforms.
+          <div className="section-divider mx-auto" />
+          <p className="max-w-lg mx-auto text-sm sm:text-base text-slate-200 font-light leading-relaxed">
+            Serving Islamabad since 2010. Engineering-focused solar systems and surveillance platforms.
           </p>
         </div>
       </section>
 
-      {/* Main Story Section */}
-      <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="font-serif font-bold text-3xl text-slate-900 dark:text-white leading-tight">
-              Leading Energy Independence in Pakistan
-            </h2>
-            <div className="w-12 h-1 bg-brand-blue rounded" />
-            <p className="text-slate-600 dark:text-slate-350 text-sm sm:text-base leading-relaxed">
-              Founded by <strong className="font-semibold text-brand-blue dark:text-brand-blue-light">Irfan Ahmad</strong> in 2010, Smart Solar & Security Solutions has been dedicated to delivering premium green energy and advanced surveillance setups. Based out of B-17, Islamabad, our company specializes in installing high-performance hybrid systems, deep-cycle battery banks, and specialized HD camera setups.
-            </p>
-            <p className="text-slate-600 dark:text-slate-355 text-sm sm:text-base leading-relaxed">
-              We have completed over <strong>100 custom installations</strong>, earning customer trust through structural galvanized mounts, neat wiring panels, and reliable system parameter optimization.
-            </p>
-            <div className="pt-2">
-              <Link href="/contact" className="btn-primary text-xs uppercase tracking-wider font-semibold">
-                Get in Touch
-              </Link>
+      {/* Main Story */}
+      <section className="py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <ScrollReveal className="space-y-6">
+            <div className="space-y-4">
+              <h2 className="font-serif font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white leading-tight">
+                Leading Energy Independence
+              </h2>
+              <div className="section-divider" />
             </div>
-          </div>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Founded by <strong className="font-semibold text-brand-blue dark:text-blue-400">Irfan Ahmad</strong> in 2010, Smart Solar & Security Solutions has delivered premium green energy and advanced surveillance setups. Based in B-17, Islamabad, we specialize in high-performance hybrid systems, deep-cycle battery banks, and HD camera setups.
+            </p>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Over <strong>100 custom installations</strong> completed, earning trust through structural galvanized mounts, clean wiring panels, and reliable system optimization.
+            </p>
+            <Link href="/contact" className="btn-primary text-xs uppercase tracking-wider font-semibold">
+              Get in Touch
+            </Link>
+          </ScrollReveal>
 
-          {/* Quick Metrics Panel */}
-          <div className="glass-panel rounded-2xl p-8 space-y-6 border shadow-sm">
-            <h3 className="font-serif font-bold text-xl text-slate-900 dark:text-white">Why Choose Us</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 bg-brand-blue-light/35 dark:bg-brand-blue/10 rounded-xl space-y-1">
-                <span className="block text-3xl font-extrabold text-brand-blue dark:text-brand-blue-light">16+</span>
-                <span className="block text-xs font-semibold uppercase text-slate-500">Years Experience</span>
-              </div>
-              <div className="p-4 bg-brand-blue-light/35 dark:bg-brand-blue/10 rounded-xl space-y-1">
-                <span className="block text-3xl font-extrabold text-brand-blue dark:text-brand-blue-light">100+</span>
-                <span className="block text-xs font-semibold uppercase text-slate-500">Projects Complete</span>
-              </div>
-              <div className="p-4 bg-brand-blue-light/35 dark:bg-brand-blue/10 rounded-xl space-y-1">
-                <span className="block text-3xl font-extrabold text-brand-blue dark:text-brand-blue-light">100%</span>
-                <span className="block text-xs font-semibold uppercase text-slate-500">Galvanized GI</span>
-              </div>
-              <div className="p-4 bg-brand-blue-light/35 dark:bg-brand-blue/10 rounded-xl space-y-1">
-                <span className="block text-3xl font-extrabold text-brand-blue dark:text-brand-blue-light">24/7</span>
-                <span className="block text-xs font-semibold uppercase text-slate-500">Remote Feeds</span>
+          <ScrollReveal delay={200}>
+            <div className="glass-panel rounded-2xl p-8 space-y-6">
+              <h3 className="font-serif font-bold text-xl text-slate-900 dark:text-white">Why Choose Us</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { val: "16+", label: "Years Experience" },
+                  { val: "100+", label: "Projects Done" },
+                  { val: "100%", label: "Galvanized GI" },
+                  { val: "24/7", label: "Remote Feeds" },
+                ].map((stat, i) => (
+                  <div key={i} className="p-5 bg-brand-blue/5 dark:bg-brand-blue/10 rounded-xl space-y-1 text-center">
+                    <span className="block text-2xl sm:text-3xl font-extrabold text-brand-blue dark:text-blue-400">{stat.val}</span>
+                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-500">{stat.label}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Focus Areas Section */}
-      <section className="py-20 bg-slate-150/40 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-4">
+      {/* Focus Areas */}
+      <section className="py-24 bg-surface dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <ScrollReveal className="text-center space-y-4">
             <h2 className="font-serif font-bold text-3xl text-slate-900 dark:text-white">Our Engineering Focus</h2>
-            <p className="text-slate-550 dark:text-slate-400 max-w-lg mx-auto text-xs sm:text-sm">
-              We focus on premium hardware, clean engineering standards, and robust integration.
+            <div className="section-divider mx-auto" />
+            <p className="text-slate-500 dark:text-slate-400 max-w-lg mx-auto text-sm">
+              Premium hardware, clean engineering standards, and robust integration.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {focusAreas.map((item, index) => (
-              <div key={index} className="glass-panel p-6 rounded-2xl shadow-sm space-y-4 hover:scale-[1.02] transition-transform duration-300">
-                <div className="inline-block px-3 py-1 rounded bg-brand-blue/10 text-brand-blue dark:text-brand-blue-light text-xs font-bold uppercase tracking-wider">
-                  {item.label}
+              <ScrollReveal key={index} delay={index * 100}>
+                <div className="glass-panel p-7 rounded-2xl card-lift h-full space-y-4">
+                  <span className="inline-block px-3 py-1 rounded-lg bg-brand-blue/8 text-brand-blue dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider">
+                    {item.label}
+                  </span>
+                  <h3 className="font-serif font-bold text-lg text-slate-900 dark:text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {item.value}
+                  </p>
                 </div>
-                <h3 className="font-serif font-bold text-lg text-slate-900 dark:text-white">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-400 leading-relaxed">
-                  {item.value}
-                </p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <h2 className="font-serif font-bold text-3xl text-center text-slate-900 dark:text-white">Our Journey</h2>
-        <div className="relative border-l-2 border-brand-blue/30 ml-4 md:ml-32 space-y-8">
+      {/* Timeline */}
+      <section className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <ScrollReveal className="text-center space-y-4">
+          <h2 className="font-serif font-bold text-3xl text-slate-900 dark:text-white">Our Journey</h2>
+          <div className="section-divider mx-auto" />
+        </ScrollReveal>
+
+        <div className="relative border-l-2 border-brand-blue/20 ml-4 md:ml-32 space-y-10">
           {milestones.map((item, index) => (
-            <div key={index} className="relative pl-6 sm:pl-10">
-              <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-blue border-4 border-slate-50 dark:border-slate-950" />
-              <div className="md:absolute md:-left-36 md:top-1 font-serif font-extrabold text-lg text-brand-blue dark:text-brand-blue-light w-24">
-                {item.year}
+            <ScrollReveal key={index} delay={index * 100}>
+              <div className="relative pl-8 sm:pl-10">
+                <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-blue border-4 border-background" />
+                <div className="md:absolute md:-left-36 md:top-1 font-serif font-extrabold text-lg text-brand-blue dark:text-blue-400 w-24">
+                  {item.year}
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-serif font-bold text-lg text-slate-900 dark:text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
-              <div className="space-y-1.5">
-                <h3 className="font-serif font-bold text-lg text-slate-900 dark:text-white">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-550 dark:text-slate-400 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
-      {/* Installations In Action Section */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-850">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-4">
+      {/* Gallery */}
+      <section className="py-24 bg-surface dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <ScrollReveal className="text-center space-y-4">
             <h2 className="font-serif font-bold text-3xl text-slate-900 dark:text-white">Installations in Action</h2>
-            <p className="text-slate-550 dark:text-slate-400 max-w-xl mx-auto text-xs sm:text-sm">
-              Photographs showcasing actual mounting array systems, galvanized rails, and DB enclosures deployed in Islamabad sectors.
+            <div className="section-divider mx-auto" />
+            <p className="text-slate-500 dark:text-slate-400 max-w-lg mx-auto text-sm">
+              Real mounting systems, galvanized rails, and DB enclosures in Islamabad.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectPhotos.map((photo, index) => (
-              <div
-                key={index}
-                className="glass-panel rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 border"
-              >
-                <div className="relative h-64 w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
-                  />
+              <ScrollReveal key={index} delay={index * 80}>
+                <div className="glass-panel rounded-2xl overflow-hidden card-lift h-full">
+                  <div className="relative h-60 w-full img-zoom">
+                    <img src={photo.src} alt={photo.alt} className="object-cover w-full h-full" />
+                  </div>
+                  <div className="p-5 space-y-1">
+                    <span className="block text-[10px] font-bold text-brand-amber uppercase tracking-wider">
+                      Project #{index + 1}
+                    </span>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-white leading-snug">
+                      {photo.caption}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4 space-y-1">
-                  <span className="block text-[10px] font-bold text-brand-amber uppercase tracking-wider">
-                    Project File #{index + 1}
-                  </span>
-                  <p className="text-sm font-semibold text-slate-900 dark:text-white leading-snug">
-                    {photo.caption}
-                  </p>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

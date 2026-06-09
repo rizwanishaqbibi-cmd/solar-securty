@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import WhatsAppFloat from "../components/WhatsAppFloat";
 import "./globals.css";
 
 const inter = Inter({
@@ -42,10 +43,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${lora.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans transition-colors duration-300">
         <Navbar />
         <main className="flex-grow flex flex-col">{children}</main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );
